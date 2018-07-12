@@ -4,7 +4,12 @@ import matplotlib.mlab as mlab
         
         Parameter
         ----------
-        audioData : List of encoded audio file's data """
+        audioData : List of encoded audio file's data 
+        
+        Returns 
+        ----------
+        Tuple of Spectrogram, Frequency, and Time
+                                                        """
                                                             
 
 def DigToSpec(audioData):
