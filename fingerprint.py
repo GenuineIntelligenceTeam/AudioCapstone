@@ -35,7 +35,7 @@ def find_peaks(spectrogram, fp=FOOTPRINT_BASIC, cutoff=0.0):
     spectrogram_peaks *= (spectrogram >= cutoff)
 
     time, freq = np.where(spectrogram_peaks)
-    return peaks_list
+    return time, freq
 
 """
 Compute a fingerprint of relative distances between peaks in a given spectrogram.
