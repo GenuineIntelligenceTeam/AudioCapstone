@@ -29,7 +29,7 @@ time, freq: ndarray, ndarray
     NDarrays of indices for the time and frequency of each peak.
 """
 def find_peaks(spectrogram, fp=FOOTPRINT_BASIC, cutoff=0.0):
-    filtered_spectrogram = maximum_filter(data, footprint=fp)
+    filtered_spectrogram = maximum_filter(spectrogram, footprint=fp)
 
     spectrogram_peaks = (spectrogram == filtered_spectrogram)
     spectrogram_peaks *= (spectrogram >= cutoff)
