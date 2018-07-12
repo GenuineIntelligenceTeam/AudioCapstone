@@ -65,8 +65,8 @@ def generate_fingerprint(spectrogram, fp=FOOTPRINT_BASIC, cutoff=0.0, fanout=30)
     N_peaks = len(peak_times)
 
     fingerprint = []
-    for n in range(N_peaks):
-        for j in range(n + 1, n + 1 + fanout):
+    for n in range(N_peaks - 1):
+        for j in range(n + 1, min(n + 1 + fanout, N_peaks)):
             fingerprint.append((peak_frequencies[n], peak_frequencies[j], peak_times[j] - peak_times[n]))
 
     return fingerprint
