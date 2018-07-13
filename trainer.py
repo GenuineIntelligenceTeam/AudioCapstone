@@ -13,11 +13,11 @@ import pickle
 song_list = songbase
 
 for song_id, song in enumerate(songbase):
-    audio_data = mp3ToDAS(song_list)
+    audio_data = mp3ToDAS(song)
     S = DigToSpec(audio_data)
     threshold = findthreshold(S)
     print("STARTING FINGERPRINT GENERATION ", song_id)
-    fingerprint = generate_fingerprint(S, cutoff=threshold, fp=np.ones((50,50)))
+    fingerprint = generate_fingerprint(S, cutoff=threshold, fp=np.ones((20,20)))
     addfingerprintstodatabase(fingerprint, song_id)
 
 with open('database.pickle', 'wb') as handle:
