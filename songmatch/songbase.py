@@ -6,8 +6,7 @@ Created on Thu Jul 12 14:37:58 2018
 @author: caseygoldstein
 """
 
-#import pandas as pd
-
+"""
 songbase = ['3005 - Childish Gambino',
 'Ain’t No Mountain High Enough - Marvin Gaye',
 'Another Brick in the Wall (Part II)  - Pink Floyd',
@@ -26,9 +25,22 @@ songbase = ['3005 - Childish Gambino',
 'Walk on Water - Britt Nicole',
 'We Don’t Talk Anymore - Charlie Puth',
 'XX Intro - XX']
-
-print(songbase)
+"""
 
 #songFrame = pd.DataFrame(songbase)
 
 #print(songFrame)
+
+songbase = [
+    "12. Marvin Gaye & Tammi Terrell - Ain't No Mountain High Enough.mp3",
+    "Childish Gambino - 3005.mp3",
+    "ComfortablyNumb.mp3",
+    "John Denver - Take Me Home, Country Roads (Audio).mp3",
+    "Pink Floyd - Another Brick In The Wall.mp3",
+    "Rush - Mystic Rhythms.mp3",
+    "The XX - Intro HQ.mp3",
+    "james_arthur_say_you_wont_let_go.mp3"
+]
+
+print(songbase)
+

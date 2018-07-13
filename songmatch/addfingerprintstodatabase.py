@@ -12,7 +12,6 @@ def addfingerprintstodatabase (fingerprints, song_id):
     for i in range(len(fingerprints)):
         holderfingerprint = fingerprints[i]
         songmatch.songDatabase[holderfingerprint[0]] = (song_id, holderfingerprint[1])
-    
         
         
         

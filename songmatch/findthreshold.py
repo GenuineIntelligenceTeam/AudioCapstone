@@ -22,19 +22,27 @@ Inputs: specArray (shape M,N) -  spectrogram data in 2D array
 Outputs: cutoff_log_amplitude - Threshold value between foreground/background of spectrogram
 """
 
+
+
+
+
 def findthreshold (specArray):
     flattenedArray = specArray.flatten()
     absArray = np.abs(flattenedArray)
     loggedArray = np.log(absArray)
-    print(loggedArray.shape)
+    return np.percentile(loggedArray,90)
+"""
+with open("/Users/caseygoldstein/Week1_Student/Day2/data/trumpet.txt", 'r') as R:
+    trumpet_audio = np.asarray([int(i) for i in R])
     
-    
-    hist,bins = np.histogram(loggedArray,len(loggedArray)//2,density = True)
-    cumulative_distr = np.zeros(len(hist))
-    binsize = np.diff(bins)
-    cumulative_distr = (np.cumsum(hist*binsize))
-    
-    print('hist:' + str(len(hist)))
-    bin_index_of_cutoff = np.searchsorted(cumulative_distr, 0.9)
-    cutoff_log_amplitude = bins[bin_index_of_cutoff]
-    return cutoff_log_amplitude
+sampling_rate = 44100 # sampling rate in Hz
+
+fig,ax = plt.subplots()
+S, freqs, times, im = ax.specgram(trumpet_audio, NFFT=4096, Fs=sampling_rate,
+                                  window=mlab.window_hanning,
+                                  noverlap=4096 // 2)
+
+print(newfindthreshold(S))
+
+
+"""

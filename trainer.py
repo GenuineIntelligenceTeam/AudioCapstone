@@ -8,18 +8,17 @@ from songmatch.songbase import songbase
 import songmatch
 
 import numpy as np
+import pickle
 
 song_list = songbase
 
-for i, element in enumerate(song_list):
+for song_id, song in enumerate(songbase):
     audio_data = mp3ToDAS(song_list)
     S = DigToSpec(audio_data)
     threshold = findthreshold(S)
+    print("STARTING FINGERPRINT GENERATION ", song_id)
     fingerprint = generate_fingerprint(S, cutoff=threshold, fp=np.ones((50,50)))
-    addfingerprintstodatabase(fingerprint, i)
+    addfingerprintstodatabase(fingerprint, song_id)
 
-    audio_data2 = mp3ToDAS2(song_list)
-    S = DigToSpec(audio_data2)
-    threshold = findthreshold(S)
-    fingerprint = generate_fingerprint(S, cutoff=threshold, fp=np.ones((50,50)))
-    print(songbase[FingerprintMatcher(songmatch.songDatabase, fingerprint)])
+with open('database.pickle', 'wb') as handle:
+    pickle.dump(songmatch.songDatabase, handle, protocol=pickle.HIGHEST_PROTOCOL)
