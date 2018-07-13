@@ -6,7 +6,7 @@ Created on Thu Jul 12 14:37:58 2018
 @author: caseygoldstein
 """
 
-import pandas as pd
+#import pandas as pd
 
 songbase = ['3005 - Childish Gambino',
 'Ain’t No Mountain High Enough - Marvin Gaye',
@@ -29,6 +29,6 @@ songbase = ['3005 - Childish Gambino',
 
 print(songbase)
 
-songFrame = pd.DataFrame(songbase)
+#songFrame = pd.DataFrame(songbase)
 
-print(songFrame)
+#print(songFrame)
