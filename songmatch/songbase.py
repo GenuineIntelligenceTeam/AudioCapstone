@@ -27,6 +27,10 @@ songbase = ['3005 - Childish Gambino',
 'XX Intro - XX']
 """
 
+#songFrame = pd.DataFrame(songbase)
+
+#print(songFrame)
+
 songbase = [
     "12. Marvin Gaye & Tammi Terrell - Ain't No Mountain High Enough.mp3",
     "Childish Gambino - 3005.mp3",
@@ -39,3 +43,4 @@ songbase = [
 ]
 
 print(songbase)
+

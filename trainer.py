@@ -1,4 +1,4 @@
-from songmatch.mp3toDAS import mp3ToDAS
+from songmatch.mp3toDAS import mp3ToDAS, mp3ToDAS2
 from songmatch.digtospec import DigToSpec
 from songmatch.findthreshold import findthreshold
 from songmatch.genfingerprint import generate_fingerprint
@@ -9,9 +9,6 @@ import songmatch
 
 import numpy as np
 import pickle
-
-print("Welcome to SongMatch - Trainer. Enter song file name: ")
-song_name = input()
 
 song_list = songbase
 
