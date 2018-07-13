@@ -12,4 +12,7 @@ def addfingerprintstodatabase (fingerprints):
         printToSong[holderfingerprint[0]] = (1,holderfingerprint[1])
         
         
+
+        
+        
         
