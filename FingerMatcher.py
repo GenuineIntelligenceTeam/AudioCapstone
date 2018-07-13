@@ -21,10 +21,6 @@ def FingerprintMatcher(database, sampleData):
     for item, peakTime in sampleData: #Loops through the sample audio and seperates the index and item (f1, f2, delta time)
         for key in database: #Gets the key (f1, f2, delta time) 
             if key == item: #Checks if a key from database matches the item
-                for i in database.get(key):
-                    idk[(i[0],np.abs(peakTime-i[1]))].append(1) 
+                i = database.get(key):
+                idk[(i[0],np.abs(peakTime-i[1]))].append(1) 
     return max(idk.items(), key=operator.itemgetter(1))[0][0] #Finds the song with the most timing similarities
-
-    
-
-
