@@ -38,9 +38,3 @@ def findthreshold (specArray):
     bin_index_of_cutoff = np.searchsorted(cumulative_distr, 0.9)
     cutoff_log_amplitude = bins[bin_index_of_cutoff]
     return cutoff_log_amplitude
-
-
-
-
-
-    
