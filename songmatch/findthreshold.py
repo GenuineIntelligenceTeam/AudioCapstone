@@ -31,11 +31,10 @@ def findthreshold (specArray):
     absArray = np.abs(flattenedArray)
     loggedArray = np.log(absArray)
     return np.percentile(loggedArray,90)
-    
+"""
 with open("/Users/caseygoldstein/Week1_Student/Day2/data/trumpet.txt", 'r') as R:
     trumpet_audio = np.asarray([int(i) for i in R])
     
-<<<<<<< HEAD
 sampling_rate = 44100 # sampling rate in Hz
 
 fig,ax = plt.subplots()
@@ -46,14 +45,4 @@ S, freqs, times, im = ax.specgram(trumpet_audio, NFFT=4096, Fs=sampling_rate,
 print(newfindthreshold(S))
 
 
-=======
-    hist,bins = np.histogram(loggedArray,len(loggedArray)//2,density = True)
-    cumulative_distr = np.zeros(len(hist))
-    binsize = np.diff(bins)
-    cumulative_distr = (np.cumsum(hist*binsize))
-    
-    print('hist:' + str(len(hist)))
-    bin_index_of_cutoff = np.searchsorted(cumulative_distr, 0.9)
-    cutoff_log_amplitude = bins[bin_index_of_cutoff]
-    return cutoff_log_amplitude
->>>>>>> d35075012f786b09ec621fa562c0cd67ca307b5a
+"""
