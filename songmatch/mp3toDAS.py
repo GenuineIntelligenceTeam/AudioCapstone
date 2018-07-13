@@ -1,7 +1,7 @@
 from microphone import record_audio
 
 import numpy as np
-from audio_sampling import analog_to_digital, song_to_digital, turn_off_ticks
+from songmatch.audio_sampling import analog_to_digital, song_to_digital, turn_off_ticks
 import urllib
 import librosa
 import matplotlib.pyplot as plt
@@ -18,7 +18,7 @@ def mp3ToDAS(song_list):
         Returns
         ----------
         audio_data_mp3 : a numpy array that contains the digitized audio data"""
-    songs = [Path(".") for song in song_list]
+    songs = [Path("./songs/" + song) for song in song_list]
     local_song_path = songs[0]
     samples, fs = librosa.load(local_song_path, sr=44100, mono=True)
     audio_data_mp3 = samples * (2**15)

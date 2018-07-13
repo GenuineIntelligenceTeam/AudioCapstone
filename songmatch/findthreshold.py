@@ -34,18 +34,4 @@ def findthreshold (specArray):
     return cutoff_log_amplitude
 
 
-with open("/Users/caseygoldstein/Desktop/trumpet_copy.txt", 'r') as R:
-    trumpet_audio = np.asarray([int(i.split("\n")[0]) for i in R if i.split("\n")[0] is not ''])
-    
-
-sampling_rate = 44100 # sampling rate in Hz
-
-fig, ax = plt.subplots()
-S, freqs, times, im = ax.specgram(trumpet_audio, NFFT=4096, Fs=sampling_rate,
-                                  window=mlab.window_hanning,
-                                  noverlap=4096 // 2)
-
-print('return:' + str(findthreshold(S)))
-
-
     
