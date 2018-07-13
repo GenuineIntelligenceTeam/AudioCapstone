@@ -16,6 +16,12 @@ import matplotlib.mlab as mlab
 from scipy.ndimage.filters import maximum_filter
 from scipy.ndimage.morphology import generate_binary_structure, binary_erosion 
 from scipy.ndimage.morphology import iterate_structure
+
+"""
+Inputs: specArray (shape M,N) -  spectrogram data in 2D array
+Outputs: cutoff_log_amplitude - Threshold value between foreground/background of spectrogram
+"""
+
 def findthreshold (specArray):
     flattenedArray = specArray.flatten()
     absArray = np.abs(flattenedArray)
@@ -32,6 +38,3 @@ def findthreshold (specArray):
     bin_index_of_cutoff = np.searchsorted(cumulative_distr, 0.9)
     cutoff_log_amplitude = bins[bin_index_of_cutoff]
     return cutoff_log_amplitude
-
-
-    
