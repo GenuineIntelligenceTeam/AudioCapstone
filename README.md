@@ -35,3 +35,4 @@ songbase.append("Pink Floyd - Time.mp3")
 
 Append the song mp3 file names to the database and then rerun the ```train_all_songs()``` function.
 
+**IMPORTANT NOTE:** when contributing, avoid pushing database.pickle to any branch as the file size is too large for github to handle.
